@@ -3,3 +3,42 @@
   color:red;
   font-size: 30px;
 }
+.press{
+  background: yellow;
+  color:orange
+}
+.box{
+  width: 100px;
+  height: 100px;
+  background: greenyellow;
+}
+.boxx{
+  background: blue;
+}
+input{
+  border:1px solid #333;
+  margin: 10px 30px;
+}
+.scroll{
+  background: red;
+  color: #fff;
+  white-space:nowrap;
+}
+.item{
+  width: 100px;
+  height:100px;
+  margin: 10px;
+  background: green;
+  display: inline-block;
+}
+.scroll1{
+  background: yellow;
+  color:#fff;
+  height: 200px;
+}
+.item1{
+  width: 100px;
+  height:100px;
+  margin: 10px;
+  background: green;
+}

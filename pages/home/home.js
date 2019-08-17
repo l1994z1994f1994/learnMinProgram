@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isload:false,
+    imgPath:''
   },
 
   /**
@@ -62,5 +63,37 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  handleChooseAlbum: function(){
+    //调用系统API，让用户自己从相册中选择或者拍照
+    let _this = this;
+    wx.chooseImage({
+      success: function(res) {
+        console.log(res);
+        //取出路径
+        const path = res.tempFilePaths[0];
+        _this.setData({
+          imgPath:path
+        })
+      },
+    })
+  },
+  handleImageLoad(){
+    console.log("图片加载完成");
+  },
+  inputFocus(event){
+    console.log(event);
+    console.log("input获取焦点:" + event.detail.value);
+  },
+  handleInput(event) {
+    console.log(event);
+    console.log("input正在输入:" + event.detail.value);
+  },
+  inputBlur(event) {
+    console.log(event);
+    console.log("input失去焦点:" + event.detail.value);
+  },
+  scrollFn(event){
+    console.log(event);
   }
 })
