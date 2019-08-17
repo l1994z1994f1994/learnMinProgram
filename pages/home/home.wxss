@@ -1,4 +1,8 @@
 /* home.wxss */
+@import './style/continer.wxss';
+@import './style/weui-grid.wxss';
+/* @import './style/weui-searchbar.wxss'; */
+
 .title{
   color:red;
   font-size: 30px;

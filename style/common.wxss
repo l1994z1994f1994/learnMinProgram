@@ -1,0 +1,6 @@
+button{
+
+}
+view{
+  font-size: 28rpx;
+}

@@ -1,0 +1,6 @@
+.cont{
+  color:red;
+}
+.conter{
+  font-size: 50rpx;
+}

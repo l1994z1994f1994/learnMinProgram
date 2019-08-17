@@ -1,3 +1,29 @@
 <!--home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+
+<!-- rpx -->
+<!-- 可以根据屏幕宽度进行自适应。规定屏幕宽为750rpx。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素(iPhone6 上) -->
+<view style="width:100px;height:100px;background:red">hahaha</view>
+<view style="width:100rpx;height:100rpx;background:yellow">heiheihei</view>
+<view class="cont">xixixixixixiixixxixi</view>
+<text class="conter">1231231</text>
+
+<!-- 官方样式库开发 -->
+
+<view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+        </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
