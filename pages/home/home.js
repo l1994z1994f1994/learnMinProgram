@@ -1,66 +1,31 @@
-// home.js
+//getApp()方法可以获取全局的app.js中的app
+const app = getApp();
+console.log(app.globalData.name);
+
+//注册一个页面
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  // 初始化数据变量
+  data:{
+    name:"管理员",
+    students:[
+      { id: 1, age: 18, name: "zhaoda" },
+      { id: 2, age: 12, name: "wanger" },
+      { id: 3, age: 38, name: "sunsan" },
+    ],
+    count:0
   },
+  //监听wxml中绑定的事件
+  handleTap(){
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    // 数据发生改变，但view层监听不到
+    // this.data.count += 1;
+    // console.log(this.data.count);
 
+    this.setData({
+      count:this.data.count += 1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  getUserFn(event){
+    console.log(event);
   }
 })
