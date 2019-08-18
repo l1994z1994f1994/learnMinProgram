@@ -1,3 +1,85 @@
 <!--home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+
+<view>现在时间：{{nowTime}}</view>
+<text class="title {{ isactive ? 'active' : ''}}">hello world</text>
+<button size="mini" bindtap="handleColor">按钮</button>
+<!-- 地图 -->
+<map class="map" longitude="116.11" latitude="39.6"></map>
+<!-- 条件判断 wx:if wx:elif wx:else -->
+<view wx:if="{{isShow == 1}}">hahaha</view>
+<view wx:elif="{{isShow == 2}}">heiheihehiehi</view>
+<view wx:else>xixixixi</view>
+
+<!-- hidden属性 -->
+<view hidden="{{true}}">hidden1</view>
+<view hidden="{{false}}">hidden2</view>
+
+<!-- 列表渲染 wx:for -->
+<view wx:for='{{["qwe","ewq","weq"]}}' wx:key="{{index}}">{{index}}-{{item}}</view>
+<!-- <view wx:for="hello world" wx:key="{{index}}">{{item}}</view>
+<view wx:for="{{10}}" wx:key="{{index}}">{{item}}</view> -->
+
+<!-- block标签:不是组件，只是一个包装标签，在页面中不做任何渲染，只接受控制属性 -->
+<block wx:if="{{isShow}}">
+  <view>1</view>
+  <view>2</view>
+  <view>3</view>
+</block>
+<!-- <block wx:for="{{3}}" wx:key="{{index}}">
+  <view>1-{{item}}</view>
+  <view>2</view>
+  <view>3</view>
+</block> -->
+
+<!-- 使用 wx:for-item 可以指定数组当前元素的变量名， -->
+<!-- 使用 wx:for-index 可以指定数组当前下标的变量 -->
+<view wx:for="{{array}}" wx:key="{{index}}" wx:for-index="idx" wx:for-item="itemName">
+  {{idx}}: {{itemName.message}}
+</view>
+<!-- <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i" wx:key="{{index}}">
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j" wx:key="{{index}}">
+    <view wx:if="{{i <= j}}">
+      {{i}} * {{j}} = {{i * j}}
+    </view>
+  </view>
+</view> -->
+
+<!-- 模版template -->
+<!-- 定义模版 -->
+<template name="temp">
+  <view>hehehe</view>
+  <text>{{cont}}</text>
+</template>
+
+<!-- 引用模版 -->
+<template is="temp" />
+<!-- 模版传值 -->
+<template is="temp" data="{{cont:'今天是个好天气'}}" />
+
+<!-- wxml文件中的两种导入方法 -->
+<!-- 引用：import可以确定引用范围；include：引用整个文件到标签处 -->
+<!-- src：绝对路径/相对路径 都可以 -->
+<!-- import：主要是导入template，不能进行递归导入 -->
+<!-- include：可以将公共的组件导入到一个文件中，不能导入template/wxs，可以进行递归导入 -->
+<import src="../about/about.wxml" />
+<template is="temp_about" data="{{cont:'今天星期天',viewText:'看效果'}}" />
+<view>————————————————————————————</view>
+<include src="../about/about.wxml"/>
+<template is="temp_about" data="{{cont:nowTime,viewText:'include'}}" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

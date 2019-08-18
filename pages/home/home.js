@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    nowTime:new Date().toLocaleString(),
+    isactive: false,
+    isShow:2,
+    array: [{
+      message: 'foo',
+    }, {
+      message: 'bar'
+    }]
+  },
+  handleColor(){
+    this.setData({
+      isactive: !this.data.isactive
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // setInterval(()=>{
+    //   this.setData({
+    //     nowTime: new Date().toLocaleString()
+    //   })
+    // },1000);
   },
 
   /**

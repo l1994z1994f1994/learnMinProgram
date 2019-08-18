@@ -1,2 +1,6 @@
 <!--home.wxml-->
 <text>about.wxml</text>
+<template name="temp_about">
+  <view>{{viewText}}</view>
+  <text>{{cont}}</text>
+</template>
