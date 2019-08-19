@@ -3,3 +3,45 @@
   color:red;
   font-size: 30px;
 }
+.box{
+  width:200rpx;
+  height:200rpx;
+  background: yellow
+}
+#outer{
+  width:200rpx;
+  height:200rpx;
+  background: red;
+  color: #fff
+}
+#inter{
+  width:100rpx;
+  height:100rpx;
+  background: yellow;
+  color: #fff
+}
+.main{
+  display: flex;
+}
+.item{
+  flex: 1;
+  text-align: center
+}
+.box1{
+  width:300rpx;
+  height:300rpx;
+  background: blue;
+  color: #ff
+}
+.box2{
+  width:200rpx;
+  height:200rpx;
+  background: red;
+  color: #fff
+}
+.box3{
+  width:100rpx;
+  height:100rpx;
+  background: yellow;
+  color: #fff
+}

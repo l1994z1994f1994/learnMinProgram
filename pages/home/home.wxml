@@ -1,3 +1,52 @@
 <!--home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+<!-- 事件处理程序 -->
+<!-- bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡 -->
+<button bindtap="handleEvent">事件处理-写法一</button>
+<button bind:tap="handleEvent">事件处理-写法二</button>
+<button catch:tap="handleEvent">事件处理-写法三</button>
+<!-- 常见的事件 -->
+<view class="box" 
+     bind:touchstart="handleTouchStart"
+     bind:touchmove="handleTouchMove"
+     bind:touchend="handleTouchEnd"
+     bind:tap="handleTap"
+     bind:longpress="handleLongpress"
+ ></view>
+
+ <!-- 事件对象的分析 -->
+ <view id="outer" bindtap="handleOuter">
+ 外层
+  <view id="inter" bindtap="handleInter">
+  内层
+  </view>
+ </view>
+ <!-- 事件的传递参数 -->
+ <view class="main">
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view class="item" bindtap="handleItem" data-index="{{index}}" data-item="{{item}}">{{item}}</view>
+  </block>
+ </view>
+
+ <!-- 事件冒泡与事件捕获 -->
+ <!-- 执行顺序：先捕获后冒泡 -->
+ <!-- bind：一步步传递执行 -->
+ <!-- catch：阻止事件一步步执行 -->
+ <view class="box1" bindtap="handleOne" capture-bind:tap="handleOneView">
+  <view class="box2" bindtap="handleTwo" capture-bind:tap="handleTwoView">
+    <view class="box3" bindtap="handleThree" capture-bind:tap="handleThreeView"></view>
+  </view>
+ </view>
+ <view>******************************</view>
+ <view class="box1" bindtap="handleOne" capture-bind:tap="handleOneView">
+  <view class="box2" catchtap="handleTwo" capture-catch:tap="handleTwoView">
+    <view class="box3" bindtap="handleThree" capture-bind:tap="handleThreeView"></view>
+  </view>
+ </view>
+ <view>******************************</view>
+ <view class="box1" bindtap="handleOne">
+  <view class="box2" catchtap="handleTwo">
+    <view class="box3" bindtap="handleThree"></view>
+  </view>
+ </view>
