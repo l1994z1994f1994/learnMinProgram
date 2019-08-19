@@ -1,0 +1,12 @@
+var handToFix = function(value){
+  return value.toFixed(2);
+}
+var foo = "aaaaaaaaaaaaaaaaaaaaaa";
+var bar = function (d) {
+  return d;
+}
+module.exports = {
+  foo: foo,
+  bar: bar,
+  handToFix: handToFix
+};

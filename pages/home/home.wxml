@@ -1,3 +1,26 @@
 <!--home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+<!-- WXS模块 小程序的脚本语言-->
+<!-- 方式一 es5语法-->
+<!-- common.js的模块化导出写法 -->
+<wxs module="foo">
+var some_msg = "hello world，你好小程序";
+module.exports = {
+  msg : some_msg,
+}
+</wxs>
+<view> {{foo.msg}} </view>
+
+<!-- 方式二 src是相对路径 -->
+<wxs src="./home.wxs" module="tofix" />
+<view>{{tofix.handToFix(23.55555555555)}}</view>
+
+<wxs src="./tool.wxs" module="tools" />
+<view> {{tools.msg}} </view>
+<view> {{tools.bar(tools.FOO)}} </view>
+
+<wxs src="../../wxs/common.wxs" module="common" />
+<view>{{tims}}</view>
+<view>{{common.dataTime(tims)}}</view>
+

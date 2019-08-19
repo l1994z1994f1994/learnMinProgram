@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tims:new Date().getTime() / 1000
   },
 
   /**
