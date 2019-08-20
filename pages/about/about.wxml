@@ -1,2 +1,5 @@
 <!--home.wxml-->
 <text>about.wxml</text>
+<my-cpn />
+<my-style />
+<!-- 自定义组件的样式 -->

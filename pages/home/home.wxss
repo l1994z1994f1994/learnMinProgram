@@ -3,3 +3,12 @@
   color:red;
   font-size: 30px;
 }
+.title1{
+  color: red;
+}
+.title2{
+  color: greenyellow;
+}
+.title3{
+  color:yellow
+}

@@ -1,3 +1,54 @@
 <!--home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+<!-- 自定义组件化开发 -->
+<!-- 1 使用自定义组件 -->
+<my-cpn></my-cpn>
+<my-cpn />
+
+<!-- 2 自定义组件验证带数字的标签 -->
+<cpn1 />
+<!-- 给自定义组件传值 传递数据/样式 -->
+<!-- <my-prop msg="hahaha" titleclass="title1"/>
+<my-prop msg="hehehe" titleclass="title2"/>
+<my-prop msg="xixixi" titleclass="title3"/>
+<my-prop /> -->
+
+<!-- 页面与组件之间的事件传递 组件内部发出事件-->
+<view>当前计数：{{count}}</view>
+<my-event bind:btnAdd="btnAddFn" />
+
+<!-- 组件传递练习 -->
+<tab-bar lists="{{lists}}" bind:handletab="handletab"/>
+
+<!-- 页面直接调用组件中的方法修改数据 -->
+<button bindtap="handleCount">点击</button>
+<my-set counter="{{count}}" />
+
+<button bindtap="handleNum" size="mini">修改组件内数据</button>
+<my-set counter="{{count}}" id="my_set"/>
+
+<!-- 插槽  slot -->
+<!-- 单个插槽的使用 -->
+<my-slot>
+  <button>我是插入的按钮</button>
+</my-slot>
+
+<my-slot>
+  <button>我是插入的按钮</button>
+  <text>我是插入的文本</text>
+</my-slot>
+
+<my-slot>
+  <slider></slider>
+  <slider value="80"></slider>
+</my-slot>
+
+<!-- 多个插槽的使用 -->
+<!-- 注意事项：1 多插槽使用时，每个插槽都要有一个名字，name属性 -->
+<!-- 2 必须在component对象中添加一个选项：options  multipleSlots:true -->
+<my-mslot>
+<button size="mini" slot="slot1">插槽1</button>
+<text slot="slot4">插槽4</text>
+</my-mslot>
+

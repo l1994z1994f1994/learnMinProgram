@@ -5,9 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    count:0,
+    lists:['流行','服装','食品']
   },
+  handletab(event){
+    console.log(event);
+  },
+  handleCount(){
+    this.setData({
+      count:this.data.count + 1
+    })
+  },
+  handleNum(){
+    // 获取组件对象
+    const my_set = this.selectComponent("#my_set");
+    console.log(my_set);
+    // my_set.setData({
+    //   num:my_set.data.num + 10
+    // })
 
+    my_set.handleSetFn(100);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -62,5 +80,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  btnAddFn(event){
+    this.setData({
+      count:this.data.count + 1
+    });
+    console.log(event);
+    console.log(event.detail);
   }
 })

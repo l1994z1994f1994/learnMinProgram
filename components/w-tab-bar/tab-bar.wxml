@@ -1,0 +1,10 @@
+<view class="tabview">
+  <!-- <view class="itemview">流行</view>
+  <view class="itemview">服装</view>
+  <view class="itemview">食品</view> -->
+  <block wx:for="{{lists}}" wx:key="{{index}}">
+    <view class="itemview {{idx == index ? 'active' : ''}}" data-ind="{{index}}" bindtap="handleItem" data-item="{{item}}">
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>
