@@ -1,0 +1,10 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+<view>详情页</view>
+<!-- 返回 -->
+<navigator open-type="navigateBack">返回</navigator>
+
+<!-- 跳转层级 -->
+<navigator url="/pages/comment/comment">评论页</navigator>
+
+<button size="mini" bindtap="hangleBack">返回</button>

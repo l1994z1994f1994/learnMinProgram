@@ -1,3 +1,22 @@
 <!--home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+
+<!-- 页面跳转 -->
+<!-- navigator组件 顶部有返回-->
+<navigator url="/pages/detail/detail">跳到详情页</navigator>
+<!-- navigator的属性 -->
+<!-- 跳转页面，不包括tabbar页面 -->
+<navigator url="/pages/detail/detail" open-type="redirect">跳到详情页redirect</navigator>
+<!-- 跳转到tabbar页面 -->
+<navigator url="/pages/about/about" open-type="switchTab">跳到详情页switchTab</navigator>
+<!-- 跳转页面，不包括tabbar页面 -->
+<navigator url="/pages/detail/detail" open-type="reLaunch">跳到详情页reLaunch</navigator>
+
+<!-- 跳转页面并进行数据传递 -->
+<navigator url="/pages/detail/detail?name=lisi&&age=18">跳到详情页并传值</navigator>
+<view>{{title}}</view>
+
+<!-- 通过代码进行页面跳转，wx -->
+<view>-------------------</view>
+<button size="mini" bind:tap="handleHref">跳转详情页</button>

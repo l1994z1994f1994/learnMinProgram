@@ -1,11 +1,11 @@
-// home.js
+// pages/comment/comment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:"返回数据"
+
   },
 
   /**
@@ -62,17 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  // 跳转页面
-  handleHref(){
-    // for(var i=0;i<10;i++){
-    //   console.log(i);
-    // }
-    wx.navigateTo({
-      url: '/pages/detail/detail?title=你好',
-    })
-    // wx.navigateBack({
-      
-    // })
   }
 })

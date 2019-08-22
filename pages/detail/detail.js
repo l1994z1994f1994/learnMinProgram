@@ -1,18 +1,18 @@
-// home.js
+// pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title:"返回数据"
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
   },
 
   /**
@@ -39,8 +39,17 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
+  // 页面退出的时候执行，可以返回的时候传递数据
   onUnload: function () {
-
+    console.log("页面退出");
+    // getCurrentPages当前所有活跃的页面
+    const pages = getCurrentPages();
+    console.log(pages);
+    const home = pages[pages.length - 2];
+    // 调用方法修改首页的数据
+    home.setData({
+      title:"返回值传递"
+    })
   },
 
   /**
@@ -63,16 +72,9 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 跳转页面
-  handleHref(){
-    // for(var i=0;i<10;i++){
-    //   console.log(i);
-    // }
-    wx.navigateTo({
-      url: '/pages/detail/detail?title=你好',
+  hangleBack(){
+    wx.navigateBack({
+      delta:1   //可选
     })
-    // wx.navigateBack({
-      
-    // })
   }
 })
