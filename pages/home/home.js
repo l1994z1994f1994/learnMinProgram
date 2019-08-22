@@ -1,66 +1,63 @@
 // home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  handleToast(){
+    wx.showToast({
+      title: '你好，小程序',
+      duration:3000,
+      mask:true,
+      success:function(){
+        console.log("弹框展示成功");
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleModal(){
+    wx.showModal({
+      title: '你好，小程序',
+      content: 'hello world',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleLoading(){
+    wx.showLoading({
+      title: '加载中',
+      success(res){
+        console.log(res);
+      }
+    });
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleActionSheet(){
+    wx.showActionSheet({
+      itemList: ['A', 'B', 'C'],
+      success(res) {
+        console.log(res);
+        console.log(res.tapIndex)
+        // switch (res.tapIndex)
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 设置分享的配置项
+  onShareAppMessage(res){
+    console.log(res);
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '美女，你好',
+      path: '/pages/about/about',
+      imageUrl:'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3024156859,632518229&fm=26&gp=0.jpg'
+    }
   }
 })

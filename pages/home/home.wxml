@@ -1,3 +1,23 @@
 <!--home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+<!-- 弹框 -->
+<!-- Toast 显示消息提示框-->
+<view>--------------------</view>
+<button size="mini" bind:tap="handleToast">show Toast</button>
+
+<!-- showModal 显示模态对话框-->
+<view>--------------------</view>
+<button size="mini" bind:tap="handleModal">show Modal</button>
+
+<!-- loading 显示 loading 提示框。需主动调用 wx.hideLoading 才能关闭提示框-->
+<view>--------------------</view>
+<button size="mini" bind:tap="handleLoading">show loading</button>
+
+<!-- actionSheet 显示操作菜单-->
+<view>--------------------</view>
+<button size="mini" bind:tap="handleActionSheet">show actionSheet</button>
+
+<!-- 分享 -->
+<view>--------------------</view>
+<button size="mini" open-type="share">分享</button>
