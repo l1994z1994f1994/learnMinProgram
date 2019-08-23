@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-swiper":"/components/swiper/swiper",
+    "my-recommend":"./childComs/recommend",
+    "tab-control":"/components/tab-control/tab-control",
+    "m-goods":"/components/m-goods/m-goods"
+  },
+  "navigationBarTitleText": "购物街"
 }

@@ -1,0 +1,11 @@
+/* components/good-item/good-item.wxss */
+  /* 注意事项：在wxss文件中不能引用本地图片，只能引用网络图片 */
+.cfav::before{
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: -15px;
+  top: -1px;
+  background: url('/assets/images/common/favor.png') 0 0/14px 14px
+}
